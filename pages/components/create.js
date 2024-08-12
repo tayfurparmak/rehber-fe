@@ -26,41 +26,31 @@ export default function Create({ show, onClose }) {
   return (
     <div className="modal-overlay">
       <div className="modal-content">
-        <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-          <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-            <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-              <div>
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                  Ad
-                </label>
-                <input
-                  type="text"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  onChange={(e) => setAd(e.target.value)}
-                />
-              </div>
-              <div>
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                  Soyad
-                </label>
-                <input
-                  type="text"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  onChange={(e) => setSoyad(e.target.value)}
-                />
-              </div>
-              <div>
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                  GSM
-                </label>
-                <input
-                  type="text"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  onChange={(e) => setGsm(e.target.value)}
-                />
-              </div>
+      <form>
+        <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
+            <div>
+                <label className="text-gray-700 dark:text-gray-200" for="username">Ad</label>
+                <input id="username" type="text" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+                   onChange={(e) => setAd(e.target.value)}/>
+            </div>
 
-              <div className="flex justify-between">
+            <div>
+                <label className="text-gray-700 dark:text-gray-200" for="soyad">Soyad</label>
+                <input id="soyad" type="text"
+                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+                 onChange={(e) => setSoyad(e.target.value)}/>
+            </div>
+
+            <div>
+                <label className="text-gray-700 dark:text-gray-200" for="number">GSM</label>
+                <input id="number" type="number" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
+                  onChange={(e) => setGsm(e.target.value)}/>
+            </div>
+
+         
+        </div>
+        </form>
+        <div className="flex justify-between mt-5">
                 <button
                   onClick={onClose}
                   type="button"
@@ -76,9 +66,6 @@ export default function Create({ show, onClose }) {
                   Kaydet
                 </button>
               </div>
-            </div>
-          </div>
-        </div>
       </div>
       <style jsx>{`
         .modal-overlay {
